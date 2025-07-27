@@ -528,6 +528,14 @@
             max-width: 100%;
         }
 
+        @media (min-width: 1440px) {
+            .about-meta {
+                grid-template-columns: repeat(3, 1fr);
+                align-items: start;
+                gap: 1.5rem;
+            }
+        }
+
         @media (max-width: 640px) {
 
             .text-5xl,
@@ -621,13 +629,15 @@
                                 interface a reflection of inner truth.
                                 I design not to impress, but to disturb the illusion.
                             </p>
-                            <div class="about-meta mt-4">
+                            <div class="about-meta mt-6 grid grid-cols-2 gap-x-8 gap-y-4">
                                 <p>LVL: 21</p>
-                                <p>ARCANA: <span class="text-cyan-400">The Moon</span></p>
-                                <p>CODENAME: <span class="text-lime-400">Chrystalyx</span></p>
                                 <p>CODING: ★★★★★</p>
+
+                                <p>CODENAME: <span class="text-lime-400">Chrystalyx</span></p>
                                 <p>DESIGN: ★★★★☆</p>
-                                <p>FOCUS: ★★★★★★★</p>
+
+                                <p>ARCANA: <span class="text-cyan-400">The Moon</span></p>
+                                <p>FOCUS: ★★★★★</p>
                             </div>
                         </div>
                     </div>

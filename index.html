@@ -348,22 +348,49 @@
 
         .project-card {
             position: relative;
-            background-color: var(--p5x-black);
             border: 3px solid var(--p5x-red);
             padding: 1.5rem;
             clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
             box-shadow: 0 0 20px rgba(255, 44, 44, 0.4);
             transition: all 0.3s ease-in-out;
             transform: skewX(-2deg);
+            overflow: hidden;
+        }
+
+        .project-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .project-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: -1;
+            transition: all 0.4s ease-in-out;
         }
 
         .project-card:hover {
             transform: scale(1.03) skewX(0deg) rotate(-0.5deg);
-            background: linear-gradient(to right, #1c1c1c, #2a0000);
             box-shadow: 0 0 25px var(--p5x-yellow);
             border-color: var(--p5x-yellow);
+        }
+
+        .project-card:hover .project-card-img {
+            transform: scale(1.1);
+        }
+
+        .project-card:hover .project-card-overlay {
+            background: linear-gradient(to top, rgba(10, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.3) 100%);
         }
 
         .project-card::before {
@@ -391,8 +418,6 @@
         .project-card h3 {
             position: relative;
             display: inline-block;
-            max-width: 100%;
-            word-wrap: break-word;
         }
 
         .project-card h3::after {
@@ -405,6 +430,31 @@
             background: var(--p5x-red);
             z-index: -1;
             transform: skewX(-15deg);
+        }
+
+        .project-card-typographic {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--p5x-black);
+        }
+
+        .typographic-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.07);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .typographic-content {
+            position: relative;
+            z-index: 2;
         }
 
         .about-card {
@@ -788,19 +838,25 @@
                     WORKS</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8">
 
-                    <div class="project-card project-item">
-                        <h3 class="font-bebas text-3xl text-yellow-400 mb-2">EMPLOYEE CORE SYSTEM</h3>
-                        <p class="text-sm text-white italic leading-relaxed">
-                            A raw and low-level solution crafted with C—built for manipulating employee records with
-                            speed, precision, and no-nonsense logic.
-                        </p>
-                        <div class="text-xs font-pixel text-green-400 mt-4">
-                            STACK: C<br>
-                            ROLE: Back-End Developer
-                        </div>
-                    </div>
+                    <a href="#" class="project-card project-item block project-card-typographic">
+                        <div class="typographic-bg-text">DATA</div>
 
-                    <div class="project-card project-item">
+                        <div class="typographic-content">
+                            <h3 class="font-bebas text-3xl text-yellow-400 mb-2">EMPLOYEE CORE SYSTEM</h3>
+                            <p class="text-sm text-white italic leading-relaxed">
+                                A raw and low-level solution crafted with C—built for manipulating employee records with
+                                speed, precision, and no-nonsense logic.
+                            </p>
+                            <div class="text-xs font-pixel text-green-400 mt-4">
+                                STACK: C<br>
+                                ROLE: Back-End Developer
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="project-card project-item block">
+                        <img src="image/ace-achiever.jpg" alt="Ace Achiever Screenshot" class="project-card-img">
+                        <div class="project-card-overlay"></div>
                         <h3 class="font-bebas text-3xl text-yellow-400 mb-2">ACE ACHIEVER</h3>
                         <p class="text-sm text-white italic leading-relaxed">
                             A productivity ally for students—schedule reminders, note-taking, and time mastery in a
@@ -810,9 +866,11 @@
                             STACK: Java, MySQL<br>
                             ROLE: Full-Stack Developer
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="project-card project-item">
+                    <a href="#" class="project-card project-item block">
+                        <img src="image/kgnexus.jpeg" alt="KGNexus Screenshot" class="project-card-img">
+                        <div class="project-card-overlay"></div>
                         <h3 class="font-bebas text-3xl text-yellow-400 mb-2">KGNEXUS</h3>
                         <p class="text-sm text-white italic leading-relaxed">
                             A digital black market for gamers—an e-commerce realm coded from ground up to deliver
@@ -822,9 +880,11 @@
                             STACK: HTML, CSS, JS, PHP, MySQL<br>
                             ROLE: Full-Stack Developer, Quality Assurance
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="project-card project-item">
+                    <a href="#" class="project-card project-item block">
+                        <img src="image/calocare.png" alt="Calocare Screenshot" class="project-card-img">
+                        <div class="project-card-overlay"></div>
                         <h3 class="font-bebas text-3xl text-yellow-400 mb-2">CALOCARE</h3>
                         <p class="text-sm text-white italic leading-relaxed">
                             A mobile reconnaissance tool for nutrition—using the camera as a scanner and TensorFlow Lite
@@ -834,9 +894,11 @@
                             STACK: Kotlin, API, TensorFlow Lite<br>
                             ROLE: Mobile Developer
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="project-card project-item">
+                    <a href="#" class="project-card project-item block">
+                        <img src="image/scholar-hunt.jpg" alt="Scholar Hunt Screenshot" class="project-card-img">
+                        <div class="project-card-overlay"></div>
                         <h3 class="font-bebas text-3xl text-yellow-400 mb-2">SCHOLAR HUNT</h3>
                         <p class="text-sm text-white italic leading-relaxed">
                             A sleek intelligence hub built to uncover scholarship opportunities, delivered through
@@ -846,9 +908,11 @@
                             STACK: Laravel, React JS, Tailwind CSS, MySQL<br>
                             ROLE: Full-Stack Developer
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="project-card project-item">
+                    <a href="#" class="project-card project-item block">
+                        <img src="image/rumah26.png" alt="Rumah 26 Screenshot" class="project-card-img">
+                        <div class="project-card-overlay"></div>
                         <h3 class="font-bebas text-3xl text-yellow-400 mb-2">RUMAH 26</h3>
                         <p class="text-sm text-white italic leading-relaxed">
                             A clean portfolio website for an architecture collective—minimalist, visual-first, designed
@@ -858,7 +922,7 @@
                             STACK: HTML, CSS, JS<br>
                             ROLE: Full-Stack Designer
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>

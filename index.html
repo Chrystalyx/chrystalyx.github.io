@@ -158,8 +158,12 @@
             z-index: 4;
         }
 
-        #testimonials {
+        #writings {
             z-index: 3;
+        }
+
+        #testimonials {
+            z-index: 2;
         }
 
         section:not(#contact, #testimonials)::after {
@@ -189,6 +193,10 @@
         }
 
         #experience::after {
+            background-color: var(--p5x-black);
+        }
+
+        #writings::after {
             background-color: var(--darker-bg);
         }
 
@@ -200,7 +208,8 @@
         }
 
         #home,
-        #projects {
+        #projects,
+        #writings {
             background-color: var(--p5x-black);
         }
 
@@ -212,7 +221,7 @@
             background-color: var(--velvet-room-bg);
             padding: 2rem 1rem;
             position: relative;
-            z-index: 2;
+            z-index: 1;
             width: 100%;
             max-width: 100vw;
             overflow-x: hidden;
@@ -982,6 +991,52 @@
                             intellectual ambushes, and fortified
                             the minds of comrades-in-learning.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="writings" class="py-16 md:py-20 px-4 md:px-10 relative">
+            <div class="container mx-auto relative z-10">
+                <h2 class="text-5xl sm:text-6xl md:text-8xl font-bebas text-center mb-12 md:mb-16 text-yellow-400">
+                    FRAGMENTED SCRIPTURES
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-8 max-w-4xl mx-auto">
+
+                    <a href="https://www.instagram.com/parnassuxx/" target="_blank" rel="noopener noreferrer"
+                        class="project-card project-item block project-card-typographic">
+                        <div class="typographic-bg-text" style="color: rgba(255, 255, 255, 0.05); font-size: 5rem;">
+                            POETRY</div>
+                        <div class="typographic-content">
+                            <h3 class="font-bebas text-2xl text-cyan-400 mb-2">POETRY // SOUL FRAGMENTS</h3>
+                            <p class="text-sm text-white italic leading-relaxed">
+                                A collection of poems that map the cognitive dissonance of the heart. Each line is a
+                                shadow, a truth, and a whisper from the Velvet Room of the soul.
+                            </p>
+                            <div class="text-xs font-pixel text-green-400 mt-4">
+                                PLATFORM: INSTAGRAM<br>
+                                STATUS: ONGOING
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://medium.com/@Parnassuxx" target="_blank" rel="noopener noreferrer"
+                        class="project-card project-item block project-card-typographic">
+                        <div class="typographic-bg-text" style="color: rgba(255, 255, 255, 0.05); font-size: 5rem;">
+                            STORIES</div>
+                        <div class="typographic-content">
+                            <h3 class="font-bebas text-2xl text-cyan-400 mb-2">SHORT STORY // TALES FROM THE METAVERSE
+                            </h3>
+                            <p class="text-sm text-white italic leading-relaxed">
+                                Narratives stolen from the realm of dreams. Chronicles of silent rebels, forgotten data,
+                                and distorted realities that bind us.
+                            </p>
+                            <div class="text-xs font-pixel text-green-400 mt-4">
+                                PLATFORM: MEDIUM<br>
+                                STATUS: IRREGULAR UPDATES
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
